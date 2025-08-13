@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIRBUZZ - విశ్వసనీయ ఆన్‌లైన్ IDs & టిప్స్</title>
+  <meta name="description" content="Airbuzz - ప్రీమియం ఆన్‌లైన్ IDs, టిప్స్ మరియు వెంటనే సపోర్ట్." />
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #06b6d4;
+      --highlight: #f59e0b;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans Telugu', Arial, Helvetica, sans-serif;
+    }
+    body {
+      background: linear-gradient(180deg, #071021 0%, #071627 100%);
+      color: #e6eef6;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 20px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    nav ul {
+      display: flex;
+      gap: 14px;
+      list-style: none;
+    }
+    a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--accent);
+    }
+    .language-selector {
+      background: var(--card);
+      color: var(--muted);
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    /* Hero section */
+    .hero {
+      border-radius: 12px;
+      overflow: hidden;
+      background: transparent;
+      margin-bottom: 40px;
+    }
+    .hero-video-wrapper {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      border-radius: 12px 12px 0 0;
+    }
+    .hero-video-wrapper video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      filter: brightness(0.6);
+      border-radius: 12px 12px 0 0;
+    }
+    .hero-content {
+      background: rgba(11, 18, 32, 0.8);
+      padding: 24px 28px;
+      border-radius: 0 0 12px 12px;
+      box-shadow:
+        0 0 10px var(--accent),
+        inset 0 0 15px rgba(6, 182, 212, 0.6);
+    }
+    .hero-content h1 {
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-shadow: 0 0 8px var(--accent);
+    }
+    .hero-content p {
+      margin-bottom: 18px;
+      color: #cdd6e4;
+    }
+    .btn {
+      background: var(--accent);
+      color: #042029;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+    .btn:hover {
+      background: #089ec3;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px var(--accent);
+      color: #e6eef6;
+    }
+    .bonus-item {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
+    .bonus-highlight {
+      color: var(--highlight);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .blink {
+      animation: blink-animation 1.5s steps(5, start) infinite;
+      color: var(--highlight);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    @keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+    /* Casino section */
+    #casino-games {
+      position: relative;
+      color: #e6eef6;
+      border-radius: 12px;
+      padding: 20px;
+      overflow: hidden;
+      background: url('logo/images/bg1.jpg') center center/cover no-repeat;
+      margin-bottom: 40px;
+    }
+    #casino-games::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      border-radius: 12px;
+      z-index: 0;
+    }
+    #casino-games > * {
+      position: relative;
+      z-index: 1;
+    }
+    /* Payment methods */
+    #payment-methods {
+      position: relative;
+      color: #e6eef6;
+      border-radius: 12px;
+      padding: 20px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    #payment-methods video.bg-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      border-radius: 12px;
+      filter: brightness(0.6);
+    }
+    #payment-methods::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      border-radius: 12px;
+      z-index: 0;
+    }
+    #payment-methods > * {
+      position: relative;
+      z-index: 1;
+    }
+    /* Upcoming Matches Section */
+    #upcoming-matches {
+      margin-top: 40px;
+    }
+    #upcoming-matches h2 {
+      margin-bottom: 16px;
+      color: var(--accent);
+      text-align: center;
+    }
+    #upcoming-matches .card {
+      text-align: center;
+    }
+    #upcoming-matches img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    @media (max-width: 820px) {
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img src="logo/logo.png" alt="AIRBUZZ లోగో" />
+        </div>
+        <div>
+          <div style="font-weight:700">AIRBUZZ</div>
+          <div style="font-size:12px;color:var(--muted)">తక్షణ IDs • సూచనలు • 24/7 సపోర్ట్</div>
+        </div>
+      </div>
+
+   <select onchange="location = this.value;">
+  <option value="index.html" selected>English</option>
+  <option value="indexhindi.html">Hindi</option>
+  <option value="indexgujarati.html">Gujarati</option>
+  <option value="indexkannada.html">Kannada</option>
+  <option value="indextelugu.html">Telugu</option>
+  <option value="indextamil.html">Tamil</option>
+</select>
+
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+      <div class="hero-video-wrapper">
+        <video autoplay muted loop playsinline>
+          <source src="logo/background/bg2.mp4" type="video/mp4" />
+          మీ బ్రౌజర్ వీడియో ట్యాగ్‌ను మద్దతు ఇవ్వదు.
+        </video>
+      </div>
+      <div class="hero-content">
+        <h1>Airbuzz — ప్రీమియం ఆన్‌లైన్ IDs మరియు నిపుణుల సూచనలు</h1>
+        <p>తక్షణం, భద్రతతో ఆన్‌లైన్ IDs పొందండి 24/7 సపోర్ట్‌తో. నిపుణుల సూచనలు, నమ్మకమైన IDs మరియు వేగవంతమైన లావాదేవీలతో సజావుగా అనుభవించండి.</p>
+        <a class="btn" href="https://wa.me/919582897268" target="_blank">WhatsApp లో సంప్రదించండి</a>
+        <span style="margin-left:10px;color:var(--muted);font-size:13px;display:inline-block;margin-top:8px;"> కనీస డిపాజిట్ ₹100 • వేగవంతమైన డ్రావల్స్</span>
+
+        <h2 id="ids" style="margin-top:24px;">లభ్యమైన సైట్లు</h2>
+        <div class="grid">
+          <div class="card">
+            <strong><a href="https://www.airbuzz.in" target="_blank" style="color:inherit;text-decoration:none">Airbuzz ఎక్స్చేంజ్</a></strong>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">తక్షణ సృష్టితో నమ్మకమైన IDs</div>
+          </div>
+        </div>
+        <a class="btn" href="https://wa.me/919582897268" target="_blank" style="margin-top:16px; display:inline-block;">WhatsApp సపోర్ట్</a>
+
+        <aside class="card" style="margin-top: 28px;">
+          <h3>బోనస్ సమాచారం</h3>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+            <div class="bonus-item"><span class="bonus-highlight">బోనస్ :-</span> <span class="blink">ప్రతి డిపాజిట్ పై 5% వరకు</span></div>
+            <div class="bonus-item"><span class="bonus-highlight">లూసింగ్ బోనస్ :-</span> అందుబాటులో ఉంది</div>
+            <div class="bonus-item"><span class="bonus-highlight">రెఫర్ బోనస్ :-</span> అందుబాటులో ఉంది</div>
+          </div>
+
+          <h3 style="margin-top:12px">తక్షణ సపోర్ట్</h3>
+          <p style="color:var(--muted);font-size:13px">తక్షణ ID సృష్టి మరియు సహాయం కోసం WhatsApp లో మసేజ్ చేయండి.</p>
+          <a class="btn" href="https://wa.me/919582897268" target="_blank" style="display:inline-block;margin-top:8px">ఇప్పుడే WhatsApp చేయండి</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Casino Games Section -->
+    <section id="casino-games">
+      <h2>AIRBUZZ లో కాసినో ఆటలు</h2>
+      <div class="card" style="font-size: 16px; line-height: 1.6;">
+        <ul style="list-style:none; padding-left:0;">
+          <li>🎰 స్లాట్ గేమ్స్ ఆన్‌లైన్ ఇండియా</li>
+          <li>🎲 రూలోట్</li>
+          <li>♠️ పోకర్</li>
+          <li>🃏 బ్లాక్‌జాక్</li>
+          <li>♥️ బ్యాకరెట్</li>
+          <li>🎥 లైవ్ కాసినో టేబుల్స్ రియల్ డీలర్స్‌తో</li>
+        </ul>
+      </div>
+      <a class="btn" href="https://wa.me/919582897268" target="_blank">WhatsApp సపోర్ట్</a>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section id="payment-methods">
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="logo/background/bg3.mp4" type="video/mp4" />
+        మీ బ్రౌజర్ వీడియో ట్యాగ్‌ను మద్దతు ఇవ్వదు.
+      </video>
+      <h2>పేమెంట్ విధానాలు</h2>
+      <div class="card" style="font-size: 16px; line-height: 1.6;">
+        <ul style="list-style:none; padding-left:0;">
+          <li>🏦 నెట్ బ్యాంకింగ్</li>
+          <li>📲 UPI చెల్లింపులు</li>
+          <li>💳 డైరెక్ట్ బ్యాంక్ ట్రాన్స్ఫర్స్</li>
+        </ul>
+      </div>
+      <a class="btn" href="https://wa.me/919582897268" target="_blank">WhatsApp సపోర్ట్</a>
+    </section>
+
+    <!-- Upcoming Matches Section -->
+    <section id="upcoming-matches">
+      <h2>రాబోయే మ్యాచ్‌లు</h2>
+      <div class="card" style="text-align:center;">
+        <a href="https://airbuzz.in/clk?src=c22358d3" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="running series and upcoming matches/the_hundred_poster.jpg" 
+            alt="ది హండ్రెడ్ - రాబోయే మ్యాచ్‌ల పోస్టర్" 
+            style="max-width:100%; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.4);" 
+          />
+        </a>
+      </div>
+      <a class="btn" href="https://wa.me/919582897268" target="_blank">WhatsApp సపోర్ట్</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="margin-top: 40px;">
+      <h2>AIRBUZZ తో సంప్రదించండి – మేము 24/7 మీకు సహాయం చేస్తాము</h2>
+      <div class="card" style="font-size: 16px; line-height: 1.6;">
+        <p>ప్రశ్నలు, సహాయం అవసరమైతే లేదా ఫీడ్‌బ్యాక్ ఇవ్వాలనుకుంటే? AIRBUZZ సపోర్ట్ టీమ్ 24/7 అందుబాటులో ఉంది — లాగిన్ సమస్యలు, డిపాజిట్లు, విడ్రాయల్స్, ఆటల యాక్సెస్ మరియు మరిన్ని.</p>
+        <p>ఎప్పుడైనా సంప్రదించండి — మేము మీకు ఉత్తమ గేమింగ్ అనుభవాన్ని అందించేందుకు కట్టుబడి ఉన్నాము.</p>
+        <a class="btn" href="https://wa.me/919582897268" target="_blank" style="margin-top: 12px; display: inline-block;">WhatsApp సపోర్ట్</a>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© AIRBUZZ | అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి</div>
+        <div style="color:var(--muted)">ఈ సేవ ఆర్థిక ప్రమాదంతో కూడుకొని ఉంటుంది. జాగ్రత్తగా ఆడండి. 18+ మాత్రమే.</div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

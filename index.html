@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIRBUZZ - Trusted Online IDs & Tips</title>
+  <meta name="description" content="Airbuzz - premium online IDs, tips, and instant support." />
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #06b6d4;
+      --highlight: #f59e0b;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Inter, system-ui, Arial, Helvetica, sans-serif;
+    }
+    body {
+      background: linear-gradient(180deg, #071021 0%, #071627 100%);
+      color: #e6eef6;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 20px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    nav ul {
+      display: flex;
+      gap: 14px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--accent);
+    }
+    select.language-selector {
+      background: var(--card);
+      color: var(--muted);
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    select.language-selector:hover,
+    select.language-selector:focus {
+      background: var(--accent);
+      color: #042029;
+      outline: none;
+    }
+
+    /* Hero section */
+    .hero {
+      border-radius: 12px;
+      overflow: hidden;
+      background: transparent;
+      margin-bottom: 40px;
+    }
+    .hero-video-wrapper {
+      position: relative;
+      width: 100%;
+      height: 320px; /* height for top video */
+      overflow: hidden;
+      border-radius: 12px 12px 0 0;
+    }
+    .hero-video-wrapper video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      filter: brightness(0.5);
+      border-radius: 12px 12px 0 0;
+    }
+    .hero-content {
+      background: rgba(11, 18, 32, 0.8);
+      padding: 24px 28px;
+      border-radius: 0 0 12px 12px;
+      box-shadow:
+        0 0 10px var(--accent),
+        inset 0 0 15px rgba(6, 182, 212, 0.6);
+    }
+    .hero-content h1 {
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-shadow:
+        0 0 8px var(--accent);
+    }
+    .hero-content p {
+      margin-bottom: 18px;
+      color: #cdd6e4;
+    }
+    .btn {
+      background: var(--accent);
+      color: #042029;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+    .btn:hover {
+      background: #089ec3;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow:
+        0 0 8px var(--accent);
+      color: #e6eef6;
+    }
+    .bonus-item {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
+    .bonus-highlight {
+      color: var(--highlight);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .blink {
+      animation: blink-animation 1.5s steps(5, start) infinite;
+      color: var(--highlight);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    @keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+
+    /* Casino section */
+    #casino-games {
+      position: relative;
+      color: #e6eef6;
+      border-radius: 12px;
+      padding: 20px;
+      overflow: hidden;
+      background: url('logo/images/bg1.jpg') center center/cover no-repeat;
+      margin-bottom: 40px;
+    }
+    #casino-games::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      border-radius: 12px;
+      z-index: 0;
+    }
+    #casino-games > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Payment methods */
+    #payment-methods {
+      position: relative;
+      color: #e6eef6;
+      border-radius: 12px;
+      padding: 20px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    #payment-methods video.bg-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      border-radius: 12px;
+      filter: brightness(0.6);
+    }
+    #payment-methods::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      border-radius: 12px;
+      z-index: 0;
+    }
+    #payment-methods > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Upcoming Matches Section */
+    #upcoming-matches {
+      margin-top: 40px;
+    }
+    #upcoming-matches h2 {
+      margin-bottom: 16px;
+      color: var(--accent);
+      text-align: center;
+    }
+    #upcoming-matches .card {
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto 16px auto;
+      background: rgba(11,18,32,0.85);
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(6,182,212,0.4);
+    }
+    #upcoming-matches img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      display: inline-block;
+    }
+
+    @media (max-width: 820px) {
+      nav ul {
+        display: none;
+      }
+      header {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img src="logo/logo.png" alt="AIRBUZZ Logo" />
+        </div>
+        <div>
+          <div style="font-weight:700">AIRBUZZ</div>
+          <div style="font-size:12px;color:var(--muted)">Instant IDs • Tips • 24/7 Support</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#ids">Online IDs</a></li>
+        </ul>
+      </nav>
+      <select onchange="location = this.value;">
+  <option value="index.html" selected>English</option>
+  <option value="indexhindi.html">Hindi</option>
+  <option value="indexgujarati.html">Gujarati</option>
+  <option value="indexkannada.html">Kannada</option>
+  <option value="indextelugu.html">Telugu</option>
+  <option value="indextamil.html">Tamil</option>
+</select>
+    </nav>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+      <div class="hero-video-wrapper">
+        <video autoplay muted loop playsinline>
+          <source src="logo/background/bg2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="hero-content">
+        <h1>Airbuzz — Premium Online IDs and Expert Tips</h1>
+        <p>Get instant, secure online IDs with 24/7 support. Explore expert tips, reliable IDs and fast transactions for a smooth experience.</p>
+        <a class="btn" href="https://wa.me/919582897268" target="_blank">Contact on WhatsApp</a>
+        <span style="margin-left:10px;color:var(--muted);font-size:13px;display:inline-block;margin-top:8px;">Minimum deposit ₹100 • Fast withdrawals</span>
+
+        <h2 id="ids" style="margin-top:24px;">Available Sites</h2>
+        <div class="grid">
+          <div class="card">
+            <strong><a href="https://www.airbuzz.in" target="_blank" style="color:inherit;text-decoration:none">Airbuzz Exchange</a></strong>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Trusted IDs with instant creation</div>
+          </div>
+        </div>
+        <a class="btn" href="https://wa.me/919582897268" target="_blank" style="margin-top:16px; display:inline-block;">WhatsApp Support</a>
+
+        <aside class="card" style="margin-top: 28px;">
+          <h3>Bonus Information</h3>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+            <div class="bonus-item"><span class="bonus-highlight">Bonus :-</span> <span class="blink">Up to 5% ON EVERY DEPOSIT</span></div>
+            <div class="bonus-item"><span class="bonus-highlight">Losing bonus :-</span> Available</div>
+            <div class="bonus-item"><span class="bonus-highlight">Refer Bonus :-</span> Available</div>
+          </div>
+
+          <h3 style="margin-top:12px">Instant Support</h3>
+          <p style="color:var(--muted);font-size:13px">Message us on WhatsApp for instant ID creation and help.</p>
+          <a class="btn" href="https://wa.me/919582897268" target="_blank" style="display:inline-block;margin-top:8px">WhatsApp Now</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Casino Games -->
+    <section id="casino-games">
+      <h2>Casino Games on AIRBUZZ</h2>
+      <div class="card" style="font-size: 16px; line-height: 1.6;">
+        <ul style="list-style:none; padding-left:0;">
+          <li>🎰 Slot Games Online India</li>
+          <li>🎲 Roulette</li>
+          <li>♠️ Poker</li>
+          <li>🃏 Blackjack</li>
+          <li>♥️ Baccarat</li>
+          <li>🎥 Live Casino Tables with Real Dealers</li>
+        </ul>
+      </div>
+      <a class="btn" href="https://wa.me/919582897268" target="_blank">WhatsApp Support</a>
+    </section>
+
+    <!-- Payment Methods -->
+    <section id="payment-methods">
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="logo/background/bg3.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <h2>Payment Methods</h2>
+      <div class="card" style="font-size: 16px; line-height: 1.6;">
+        <ul style="list-style:none; padding-left:0;">
+          <li>🏦 Net Banking</li>
+          <li>📲 UPI Payments</li>
+          <li>💳 Direct Bank Transfers</li>
+        </ul>
+      </div>
+      <a class="btn" href="https://wa.me/919582897268" target="_blank">WhatsApp Support</a>
+    </section>
+
+    <!-- Upcoming Matches -->
+    <section id="upcoming-matches">
+      <h2>Upcoming Matches</h2>
+      <div class="card" style="text-align:center;">
+        <a href="https://airbuzz.in/clk?src=c22358d3" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="running series and upcoming matches/the_hundred_poster.jpg" 
+            alt="The Hundred - Upcoming Matches Poster" 
+            style="max-width:100%; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.4);" 
+          />
+        </a>
+      </div>
+      <a class="btn" href="https://wa.me/919582897268" target="_blank">WhatsApp Support</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="margin-top: 40px;">
+      <h2>Contact AIRBUZZ – We’re Here for You 24/7</h2>
+      <div class="card" style="font-size: 16px; line-height: 1.6;">
+        <p>Have questions, need help, or want to share feedback? The AIRBUZZ support team is available 24/7 to assist with everything — from login issues to deposits, withdrawals, game access, and more.</p>
+        <p>Reach out anytime — we’re just a message away and committed to delivering the best possible gaming experience.</p>
+        <a class="btn" href="https://wa.me/919582897268" target="_blank" style="margin-top: 12px; display: inline-block;">WhatsApp Support</a>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© AIRBUZZ | All Rights Reserved</div>
+        <div style="color:var(--muted)">This service involves financial risk. Play responsibly. 18+ only.</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
